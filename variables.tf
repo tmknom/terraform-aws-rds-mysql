@@ -163,6 +163,18 @@ variable "license_model" {
   description = "License model information for this DB instance."
 }
 
+variable "major_engine_version" {
+  default     = ""
+  type        = "string"
+  description = "Specifies the major version of the engine that this option group should be associated with."
+}
+
+variable "description" {
+  default     = "Managed by Terraform"
+  type        = "string"
+  description = "The description of the all resources."
+}
+
 variable "tags" {
   default     = {}
   type        = "map"

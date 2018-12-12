@@ -102,3 +102,13 @@ output "db_instance_username" {
   value       = "${aws_db_instance.default.username}"
   description = "The master username for the database."
 }
+
+output "db_option_group_id" {
+  value       = "${aws_db_option_group.default.id}"
+  description = "The db option group name."
+}
+
+output "db_option_group_arn" {
+  value       = "${aws_db_instance.default.arn}"
+  description = "The ARN of the db option group."
+}

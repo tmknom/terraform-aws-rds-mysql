@@ -227,3 +227,23 @@ resource "aws_db_instance" "default" {
     ignore_changes = ["password"]
   }
 }
+
+# NOTE: Any modifications to the db_option_group are set to happen immediately as we default to applying immediately.
+#
+# https://www.terraform.io/docs/providers/aws/r/db_option_group.html
+resource "aws_db_option_group" "default" {
+  engine_name              = "mysql"
+  name                     = "${var.identifier}"
+  major_engine_version     = "${local.major_engine_version}"
+  option_group_description = "${var.description}"
+
+  tags = "${merge(map("Name", var.identifier), var.tags)}"
+}
+
+# If major_engine_version is unspecified, then calculate major_engine_version.
+# Calculate from X.Y.Z(or X.Y) to X.Y, for example 5.7.21 is calculated 5.7.
+locals {
+  version_elements       = "${split(".", var.engine_version)}"
+  major_version_elements = ["${local.version_elements[0]}", "${local.version_elements[1]}"]
+  major_engine_version   = "${var.major_engine_version == "" ? join(".", local.major_version_elements) : var.major_engine_version}"
+}
