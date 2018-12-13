@@ -48,6 +48,16 @@ variable "subnet_ids" {
   description = "A list of VPC subnet IDs."
 }
 
+variable "vpc_id" {
+  type        = "string"
+  description = "VPC Id to associate with RDS MySQL."
+}
+
+variable "ingress_cidr_blocks" {
+  type        = "list"
+  description = "List of Ingress CIDR blocks."
+}
+
 variable "apply_immediately" {
   default     = false
   type        = "string"
