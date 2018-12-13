@@ -247,3 +247,16 @@ locals {
   major_version_elements = ["${local.version_elements[0]}", "${local.version_elements[1]}"]
   major_engine_version   = "${var.major_engine_version == "" ? join(".", local.major_version_elements) : var.major_engine_version}"
 }
+
+# https://www.terraform.io/docs/providers/aws/r/db_parameter_group.html
+resource "aws_db_parameter_group" "default" {
+  name        = "${var.identifier}"
+  family      = "${local.family}"
+  description = "${var.description}"
+
+  tags = "${merge(map("Name", var.identifier), var.tags)}"
+}
+
+locals {
+  family = "mysql${local.major_engine_version}"
+}

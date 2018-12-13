@@ -112,3 +112,13 @@ output "db_option_group_arn" {
   value       = "${aws_db_instance.default.arn}"
   description = "The ARN of the db option group."
 }
+
+output "db_parameter_group_id" {
+  value       = "${aws_db_parameter_group.default.id}"
+  description = "The db parameter group name."
+}
+
+output "db_parameter_group_arn" {
+  value       = "${aws_db_parameter_group.default.arn}"
+  description = "The ARN of the db parameter group."
+}
