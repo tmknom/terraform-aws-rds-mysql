@@ -260,3 +260,12 @@ resource "aws_db_parameter_group" "default" {
 locals {
   family = "mysql${local.major_engine_version}"
 }
+
+# https://www.terraform.io/docs/providers/aws/r/db_subnet_group.html
+resource "aws_db_subnet_group" "default" {
+  name        = "${var.identifier}"
+  subnet_ids  = ["${var.subnet_ids}"]
+  description = "${var.description}"
+
+  tags = "${merge(map("Name", var.identifier), var.tags)}"
+}

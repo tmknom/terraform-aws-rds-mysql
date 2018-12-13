@@ -43,6 +43,11 @@ variable "backup_window" {
   description = "The daily time range (in UTC) during which automated backups are created if they are enabled."
 }
 
+variable "subnet_ids" {
+  type        = "list"
+  description = "A list of VPC subnet IDs."
+}
+
 variable "apply_immediately" {
   default     = false
   type        = "string"

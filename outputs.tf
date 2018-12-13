@@ -122,3 +122,13 @@ output "db_parameter_group_arn" {
   value       = "${aws_db_parameter_group.default.arn}"
   description = "The ARN of the db parameter group."
 }
+
+output "db_subnet_group_id" {
+  value       = "${aws_db_subnet_group.default.id}"
+  description = "The db subnet group name."
+}
+
+output "db_subnet_group_arn" {
+  value       = "${aws_db_subnet_group.default.arn}"
+  description = "The ARN of the db subnet group."
+}
