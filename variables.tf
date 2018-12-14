@@ -204,3 +204,9 @@ variable "character_set" {
   type        = "string"
   description = "The database character set."
 }
+
+variable "collation" {
+  default     = "utf8mb4_bin"
+  type        = "string"
+  description = "The database collation."
+}

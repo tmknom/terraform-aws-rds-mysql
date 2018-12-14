@@ -284,6 +284,18 @@ resource "aws_db_parameter_group" "default" {
     apply_method = "immediate"
   }
 
+  parameter {
+    name         = "collation_connection"
+    value        = "${var.collation}"
+    apply_method = "immediate"
+  }
+
+  parameter {
+    name         = "collation_server"
+    value        = "${var.collation}"
+    apply_method = "immediate"
+  }
+
   tags = "${merge(map("Name", var.identifier), var.tags)}"
 }
 
