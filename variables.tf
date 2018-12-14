@@ -33,12 +33,6 @@ variable "password" {
   description = "Password for the master DB user."
 }
 
-variable "maintenance_window" {
-  default     = ""
-  type        = "string"
-  description = "The window to perform maintenance in."
-}
-
 variable "subnet_ids" {
   type        = "list"
   description = "A list of VPC subnet IDs."
@@ -52,6 +46,12 @@ variable "vpc_id" {
 variable "ingress_cidr_blocks" {
   type        = "list"
   description = "List of Ingress CIDR blocks."
+}
+
+variable "maintenance_window" {
+  default     = ""
+  type        = "string"
+  description = "The window to perform maintenance in."
 }
 
 variable "backup_window" {
