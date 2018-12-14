@@ -254,6 +254,36 @@ resource "aws_db_parameter_group" "default" {
   family      = "${local.family}"
   description = "${var.description}"
 
+  parameter {
+    name         = "character_set_client"
+    value        = "${var.character_set}"
+    apply_method = "immediate"
+  }
+
+  parameter {
+    name         = "character_set_connection"
+    value        = "${var.character_set}"
+    apply_method = "immediate"
+  }
+
+  parameter {
+    name         = "character_set_database"
+    value        = "${var.character_set}"
+    apply_method = "immediate"
+  }
+
+  parameter {
+    name         = "character_set_results"
+    value        = "${var.character_set}"
+    apply_method = "immediate"
+  }
+
+  parameter {
+    name         = "character_set_server"
+    value        = "${var.character_set}"
+    apply_method = "immediate"
+  }
+
   tags = "${merge(map("Name", var.identifier), var.tags)}"
 }
 

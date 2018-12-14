@@ -198,3 +198,9 @@ variable "tags" {
   type        = "map"
   description = "A mapping of tags to assign to all resources."
 }
+
+variable "character_set" {
+  default     = "utf8mb4"
+  type        = "string"
+  description = "The database character set."
+}
