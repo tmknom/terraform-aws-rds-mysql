@@ -210,3 +210,9 @@ variable "collation" {
   type        = "string"
   description = "The database collation."
 }
+
+variable "time_zone" {
+  default     = "UTC"
+  type        = "string"
+  description = "The database time zone."
+}
