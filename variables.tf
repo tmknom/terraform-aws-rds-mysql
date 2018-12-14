@@ -216,3 +216,9 @@ variable "time_zone" {
   type        = "string"
   description = "The database time zone."
 }
+
+variable "tx_isolation" {
+  default     = "REPEATABLE-READ"
+  type        = "string"
+  description = "Sets the default transaction isolation level."
+}
