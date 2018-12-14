@@ -38,12 +38,6 @@ variable "maintenance_window" {
   description = "The window to perform maintenance in."
 }
 
-variable "backup_window" {
-  default     = ""
-  type        = "string"
-  description = "The daily time range (in UTC) during which automated backups are created if they are enabled."
-}
-
 variable "subnet_ids" {
   type        = "list"
   description = "A list of VPC subnet IDs."
@@ -57,6 +51,12 @@ variable "vpc_id" {
 variable "ingress_cidr_blocks" {
   type        = "list"
   description = "List of Ingress CIDR blocks."
+}
+
+variable "backup_window" {
+  default     = ""
+  type        = "string"
+  description = "The daily time range (in UTC) during which automated backups are created if they are enabled."
 }
 
 variable "apply_immediately" {
