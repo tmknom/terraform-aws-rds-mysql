@@ -6,6 +6,22 @@
 
 Terraform module which creates MySQL RDS resources on AWS.
 
+## Description
+
+Provision [RDS DB Instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html),
+[Option Group](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithOptionGroups.html) and
+[Parameter Group](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html).
+
+This module provides recommended settings:
+
+- Enable deletion protection
+- Enable Multi-AZ
+- Enable encryption
+- Enable IAM database authentication
+- Enable automated backups
+- Sufficient backup retention period
+- Disable publicly accessible
+
 ## Usage
 
 ### Minimal
