@@ -47,14 +47,6 @@ resource "aws_db_instance" "default" {
   # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html
   allocated_storage = "${var.allocated_storage}"
 
-  # The name of the database. If this parameter is not specified, no database is created in the DB instance.
-  #
-  # - Must contain 1 to 64 letters or numbers.
-  # - Can't be a word reserved by the specified database engine
-  #
-  # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.Constraints
-  name = "${var.name}"
-
   # The name for the master user.
   #
   # - Must be 1 to 16 letters or numbers.
@@ -114,6 +106,14 @@ resource "aws_db_instance" "default" {
   # The port that you want to access the DB instance through.
   # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateInstance.html
   port = "${var.port}"
+
+  # The name of the database. If this parameter is not specified, no database is created in the DB instance.
+  #
+  # - Must contain 1 to 64 letters or numbers.
+  # - Can't be a word reserved by the specified database engine
+  #
+  # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.Constraints
+  name = "${var.name}"
 
   # The following list briefly describes the three storage types:
   #
