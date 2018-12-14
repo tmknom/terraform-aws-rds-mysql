@@ -109,7 +109,7 @@ output "db_option_group_id" {
 }
 
 output "db_option_group_arn" {
-  value       = "${aws_db_instance.default.arn}"
+  value       = "${aws_db_option_group.default.arn}"
   description = "The ARN of the db option group."
 }
 
