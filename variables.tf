@@ -34,6 +34,7 @@ variable "password" {
 }
 
 variable "maintenance_window" {
+  default     = ""
   type        = "string"
   description = "The window to perform maintenance in."
 }
