@@ -39,6 +39,7 @@ variable "maintenance_window" {
 }
 
 variable "backup_window" {
+  default     = ""
   type        = "string"
   description = "The daily time range (in UTC) during which automated backups are created if they are enabled."
 }
