@@ -28,7 +28,7 @@ This module provides recommended settings:
 
 ```hcl
 module "rds_mysql" {
-  source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/1.0.0"
+  source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/1.1.0"
   identifier        = "example"
   engine_version    = "5.7.23"
   instance_class    = "db.t2.small"
@@ -46,7 +46,7 @@ module "rds_mysql" {
 
 ```hcl
 module "rds_mysql" {
-  source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/1.0.0"
+  source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/1.1.0"
   identifier        = "example"
   engine_version    = "5.7.23"
   instance_class    = "db.t2.small"
