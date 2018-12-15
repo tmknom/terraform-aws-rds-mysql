@@ -150,12 +150,12 @@ module "rds_mysql" {
 | db_instance_backup_retention_period | The backup retention period.                                                             |
 | db_instance_backup_window           | The backup window.                                                                       |
 | db_instance_ca_cert_identifier      | Specifies the identifier of the CA certificate for the DB instance.                      |
+| db_instance_class                   | The RDS instance class.                                                                  |
 | db_instance_endpoint                | .The connection endpoint in address:port format.                                         |
 | db_instance_engine                  | The database engine.                                                                     |
 | db_instance_engine_version          | The database engine version.                                                             |
 | db_instance_hosted_zone_id          | The canonical hosted zone ID of the DB instance (to be used in a Route 53 Alias record). |
 | db_instance_id                      | The RDS instance ID.                                                                     |
-| db_instance_instance_class          | The RDS instance class.                                                                  |
 | db_instance_maintenance_window      | The instance maintenance window.                                                         |
 | db_instance_multi_az                | If the RDS instance is multi AZ enabled.                                                 |
 | db_instance_name                    | The database name.                                                                       |
