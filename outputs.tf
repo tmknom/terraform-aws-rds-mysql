@@ -58,7 +58,7 @@ output "db_instance_id" {
   description = "The RDS instance ID."
 }
 
-output "db_instance_instance_class" {
+output "db_instance_class" {
   value       = "${aws_db_instance.default.instance_class}"
   description = "The RDS instance class."
 }
