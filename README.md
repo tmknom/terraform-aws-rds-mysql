@@ -113,6 +113,8 @@ module "rds_mysql" {
 | auto_minor_version_upgrade          | Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance window.. | string |          `true`          |    no    |
 | backup_retention_period             | The days to retain backups for. Must be between 0 and 35.                                                             | string |           `30`           |    no    |
 | backup_window                       | The daily time range (in UTC) during which automated backups are created if they are enabled.                         | string |         `` | no          |
+| character_set                       | The database character set.                                                                                           | string |        `utf8mb4`         |    no    |
+| collation                           | The database collation.                                                                                               | string |      `utf8mb4_bin`       |    no    |
 | copy_tags_to_snapshot               | On delete, copy all Instance tags to the final snapshot.                                                              | string |          `true`          |    no    |
 | deletion_protection                 | If the DB instance should have deletion protection enabled.                                                           | string |          `true`          |    no    |
 | description                         | The description of the all resources.                                                                                 | string |  `Managed by Terraform`  |    no    |
@@ -134,6 +136,8 @@ module "rds_mysql" {
 | storage_encrypted                   | Specifies whether the DB instance is encrypted.                                                                       | string |          `true`          |    no    |
 | storage_type                        | One of standard (magnetic), gp2 (general purpose SSD), or io1 (provisioned IOPS SSD).                                 | string |          `gp2`           |    no    |
 | tags                                | A mapping of tags to assign to all resources.                                                                         |  map   |           `{}`           |    no    |
+| time_zone                           | The database time zone.                                                                                               | string |          `UTC`           |    no    |
+| tx_isolation                        | Sets the default transaction isolation level.                                                                         | string |    `REPEATABLE-READ`     |    no    |
 
 ## Outputs
 
