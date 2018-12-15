@@ -46,8 +46,8 @@ output "db_instance_id" {
   value = "${module.rds_mysql.db_instance_id}"
 }
 
-output "db_instance_instance_class" {
-  value = "${module.rds_mysql.db_instance_instance_class}"
+output "db_instance_class" {
+  value = "${module.rds_mysql.db_instance_class}"
 }
 
 output "db_instance_maintenance_window" {
