@@ -183,6 +183,11 @@ resource "aws_db_instance" "default" {
   # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html#USER_DeleteInstance.Snapshot
   skip_final_snapshot = var.skip_final_snapshot
 
+  # Specifies whether or not to create this database from a snapshot. 
+  # This correlates to the snapshot ID you'd find in the RDS console, e.g: rds:production-2015-06-26-06-05.
+  snapshot_identifier = var.snapshot_identifier
+  
+  
   # You can configure your Amazon RDS MySQL DB instance to publish log data to a log group in Amazon CloudWatch Logs.
   # Valid values (depending on engine): alert, audit, error, general, listener, slowquery, trace.
   # If omitted, no logs will be exported.
