@@ -133,6 +133,11 @@ variable "final_snapshot_identifier" {
   description = "The name of your final DB snapshot when this DB instance is deleted."
 }
 
+variable "snapshot_identifier" {
+  default     = ""
+  type        = string
+  description = "The DB snapshot used when DB instance is created."
+}
 variable "skip_final_snapshot" {
   default     = false
   type        = string
