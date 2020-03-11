@@ -183,6 +183,11 @@ resource "aws_db_instance" "default" {
   # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html#USER_DeleteInstance.Snapshot
   skip_final_snapshot = var.skip_final_snapshot
 
+  # Specifies whether or not to create this database from a snapshot. 
+  # This correlates to the snapshot ID you'd find in the RDS console, e.g: rds:production-2015-06-26-06-05.
+  snapshot_identifier = var.snapshot_identifier
+
+
   # You can configure your Amazon RDS MySQL DB instance to publish log data to a log group in Amazon CloudWatch Logs.
   # Valid values (depending on engine): alert, audit, error, general, listener, slowquery, trace.
   # If omitted, no logs will be exported.
@@ -212,6 +217,10 @@ resource "aws_db_instance" "default" {
   # This parameter lets you designate whether there is public access to the DB instance.
   # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Hiding
   publicly_accessible = var.publicly_accessible
+
+  # This parameter lets you designate CA to be used on instance
+  # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+  ca_cert_identifier = var.ca_cert_identifier
 
   # License model information for this DB instance.
   # MySQL has only one license model, general-public-license the general license agreement for MySQL.

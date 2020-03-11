@@ -133,6 +133,11 @@ variable "final_snapshot_identifier" {
   description = "The name of your final DB snapshot when this DB instance is deleted."
 }
 
+variable "snapshot_identifier" {
+  default     = ""
+  type        = string
+  description = "The DB snapshot used when DB instance is created."
+}
 variable "skip_final_snapshot" {
   default     = false
   type        = string
@@ -221,5 +226,11 @@ variable "tx_isolation" {
   default     = "REPEATABLE-READ"
   type        = string
   description = "Sets the default transaction isolation level."
+}
+
+variable "ca_cert_identifier" {
+  default     = "rds-ca-2019"
+  type        = string
+  description = "The identifier of the CA certificate for the DB instance."
 }
 
