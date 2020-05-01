@@ -41,7 +41,7 @@ module "rds_mysql" {
 
   subnet_ids          = var.subnets
   vpc_id              = var.vpc_id
-  ingress_cidr_blocks = var.ingress_cidr_blocks
+  source_cidr_blocks = var.source_cidr_blocks
 }
 ```
 
@@ -59,7 +59,7 @@ module "rds_mysql" {
 
   subnet_ids          = var.subnets
   vpc_id              = var.vpc_id
-  ingress_cidr_blocks = var.ingress_cidr_blocks
+  source_cidr_blocks = var.source_cidr_blocks
 
   maintenance_window                  = "mon:10:10-mon:10:40"
   backup_window                       = "09:10-09:40"
@@ -117,9 +117,9 @@ module "rds_mysql" {
 | allocated_storage                   | The allocated storage in gibibytes.                                                                                   | `string`       | n/a                        |   yes    |
 | engine_version                      | The engine version to use.                                                                                            | `string`       | n/a                        |   yes    |
 | identifier                          | The name of the RDS instance.                                                                                         | `string`       | n/a                        |   yes    |
-| ingress_cidr_blocks                 | List of Ingress CIDR blocks.                                                                                          | `list(string)` | n/a                        |   yes    |
 | instance_class                      | The instance type of the RDS instance.                                                                                | `string`       | n/a                        |   yes    |
 | password                            | Password for the master DB user.                                                                                      | `string`       | n/a                        |   yes    |
+| source_cidr_blocks                  | List of source CIDR blocks.                                                                                           | `list(string)` | n/a                        |   yes    |
 | subnet_ids                          | A list of VPC subnet IDs.                                                                                             | `list(string)` | n/a                        |   yes    |
 | username                            | Username for the master DB user.                                                                                      | `string`       | n/a                        |   yes    |
 | vpc_id                              | VPC Id to associate with RDS MySQL.                                                                                   | `string`       | n/a                        |   yes    |
