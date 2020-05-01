@@ -172,4 +172,3 @@ output "security_group_egress" {
   value       = aws_security_group.default.egress
   description = "The egress rules of the RDS MySQL security group."
 }
-

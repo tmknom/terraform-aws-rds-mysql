@@ -233,4 +233,3 @@ variable "ca_cert_identifier" {
   type        = string
   description = "The identifier of the CA certificate for the DB instance."
 }
-
