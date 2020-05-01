@@ -187,7 +187,6 @@ resource "aws_db_instance" "default" {
   # This correlates to the snapshot ID you'd find in the RDS console, e.g: rds:production-2015-06-26-06-05.
   snapshot_identifier = var.snapshot_identifier
 
-
   # You can configure your Amazon RDS MySQL DB instance to publish log data to a log group in Amazon CloudWatch Logs.
   # Valid values (depending on engine): alert, audit, error, general, listener, slowquery, trace.
   # If omitted, no logs will be exported.
