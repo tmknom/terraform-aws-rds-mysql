@@ -228,12 +228,7 @@ resource "aws_db_instance" "default" {
   license_model = var.license_model
 
   # A mapping of tags to assign to the resource.
-  tags = merge(
-    {
-      "Name" = var.identifier
-    },
-    var.tags,
-  )
+  tags = merge({ "Name" = var.identifier }, var.tags)
 
   # The password defined in Terraform is an initial value, it must be changed after creating the RDS instance.
   # Therefore, suppress plan diff after changing the password.
@@ -251,12 +246,7 @@ resource "aws_db_option_group" "default" {
   major_engine_version     = local.major_engine_version
   option_group_description = var.description
 
-  tags = merge(
-    {
-      "Name" = var.identifier
-    },
-    var.tags,
-  )
+  tags = merge({ "Name" = var.identifier }, var.tags)
 }
 
 # If major_engine_version is unspecified, then calculate major_engine_version.
@@ -327,12 +317,7 @@ resource "aws_db_parameter_group" "default" {
     apply_method = "immediate"
   }
 
-  tags = merge(
-    {
-      "Name" = var.identifier
-    },
-    var.tags,
-  )
+  tags = merge({ "Name" = var.identifier }, var.tags)
 }
 
 locals {
@@ -345,24 +330,15 @@ resource "aws_db_subnet_group" "default" {
   subnet_ids  = var.subnet_ids
   description = var.description
 
-  tags = merge(
-    {
-      "Name" = var.identifier
-    },
-    var.tags,
-  )
+  tags = merge({ "Name" = var.identifier }, var.tags)
 }
 
 # https://www.terraform.io/docs/providers/aws/r/security_group.html
 resource "aws_security_group" "default" {
   name   = local.security_group_name
   vpc_id = var.vpc_id
-  tags = merge(
-    {
-      "Name" = local.security_group_name
-    },
-    var.tags,
-  )
+
+  tags = merge({ "Name" = local.security_group_name }, var.tags)
 }
 
 locals {
