@@ -98,49 +98,63 @@ module "rds_mysql" {
 - [Minimal](https://github.com/tmknom/terraform-aws-rds-mysql/tree/master/examples/minimal)
 - [Complete](https://github.com/tmknom/terraform-aws-rds-mysql/tree/master/examples/complete)
 
+## Requirements
+
+| Name      | Version |
+| --------- | ------- |
+| terraform | >= 0.12 |
+
+## Providers
+
+| Name | Version |
+| ---- | ------- |
+| aws  | n/a     |
+
 ## Inputs
 
-| Name                                | Description                                                                                                           |  Type  |         Default          | Required |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------- | :----: | :----------------------: | :------: |
-| allocated_storage                   | The allocated storage in gibibytes.                                                                                   | string |            -             |   yes    |
-| engine_version                      | The engine version to use.                                                                                            | string |            -             |   yes    |
-| identifier                          | The name of the RDS instance.                                                                                         | string |            -             |   yes    |
-| ingress_cidr_blocks                 | List of Ingress CIDR blocks.                                                                                          |  list  |            -             |   yes    |
-| instance_class                      | The instance type of the RDS instance.                                                                                | string |            -             |   yes    |
-| password                            | Password for the master DB user.                                                                                      | string |            -             |   yes    |
-| subnet_ids                          | A list of VPC subnet IDs.                                                                                             |  list  |            -             |   yes    |
-| username                            | Username for the master DB user.                                                                                      | string |            -             |   yes    |
-| vpc_id                              | VPC Id to associate with RDS MySQL.                                                                                   | string |            -             |   yes    |
-| allow_major_version_upgrade         | Indicates that major version upgrades are allowed.                                                                    | string |          `true`          |    no    |
-| apply_immediately                   | Specifies whether any database modifications are applied immediately, or during the next maintenance window.          | string |         `false`          |    no    |
-| auto_minor_version_upgrade          | Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance window.. | string |          `true`          |    no    |
-| backup_retention_period             | The days to retain backups for. Must be between 0 and 35.                                                             | string |           `30`           |    no    |
-| backup_window                       | The daily time range (in UTC) during which automated backups are created if they are enabled.                         | string |         `` | no          |
-| character_set                       | The database character set.                                                                                           | string |        `utf8mb4`         |    no    |
-| collation                           | The database collation.                                                                                               | string |      `utf8mb4_bin`       |    no    |
-| copy_tags_to_snapshot               | On delete, copy all Instance tags to the final snapshot.                                                              | string |          `true`          |    no    |
-| deletion_protection                 | If the DB instance should have deletion protection enabled.                                                           | string |          `true`          |    no    |
-| description                         | The description of the all resources.                                                                                 | string |  `Managed by Terraform`  |    no    |
-| enabled_cloudwatch_logs_exports     | List of log types to enable for exporting to CloudWatch logs.                                                         |  list  |           `[]`           |    no    |
-| final_snapshot_identifier           | The name of your final DB snapshot when this DB instance is deleted.                                                  | string |     `final-snapshot`     |    no    |
-| iam_database_authentication_enabled | Specifies whether or mappings of IAM accounts to database accounts is enabled.                                        | string |          `true`          |    no    |
-| iops                                | The amount of provisioned IOPS. Setting this implies a storage_type of io1.                                           | string |           `0`            |    no    |
-| kms_key_id                          | The ARN for the KMS encryption key.                                                                                   | string |         `` | no          |
-| license_model                       | License model information for this DB instance.                                                                       | string | `general-public-license` |    no    |
-| maintenance_window                  | The window to perform maintenance in.                                                                                 | string |         `` | no          |
-| major_engine_version                | Specifies the major version of the engine that this option group should be associated with.                           | string |         `` | no          |
-| monitoring_interval                 | The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.          | string |           `0`            |    no    |
-| monitoring_role_arn                 | The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs.                     | string |         `` | no          |
-| multi_az                            | Specifies if the RDS instance is multi-AZ.                                                                            | string |          `true`          |    no    |
-| name                                | The name of the database to create when the DB instance is created.                                                   | string |         `` | no          |
-| port                                | The port on which the DB accepts connections.                                                                         | string |          `3306`          |    no    |
-| publicly_accessible                 | Bool to control if instance is publicly accessible.                                                                   | string |         `false`          |    no    |
-| skip_final_snapshot                 | Determines whether a final DB snapshot is created before the DB instance is deleted.                                  | string |         `false`          |    no    |
-| storage_encrypted                   | Specifies whether the DB instance is encrypted.                                                                       | string |          `true`          |    no    |
-| storage_type                        | One of standard (magnetic), gp2 (general purpose SSD), or io1 (provisioned IOPS SSD).                                 | string |          `gp2`           |    no    |
-| tags                                | A mapping of tags to assign to all resources.                                                                         |  map   |           `{}`           |    no    |
-| time_zone                           | The database time zone.                                                                                               | string |          `UTC`           |    no    |
-| tx_isolation                        | Sets the default transaction isolation level.                                                                         | string |    `REPEATABLE-READ`     |    no    |
+| Name                                | Description                                                                                                           | Type           | Default                    | Required |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------------- | -------------------------- | :------: |
+| allocated_storage                   | The allocated storage in gibibytes.                                                                                   | `string`       | n/a                        |   yes    |
+| engine_version                      | The engine version to use.                                                                                            | `string`       | n/a                        |   yes    |
+| identifier                          | The name of the RDS instance.                                                                                         | `string`       | n/a                        |   yes    |
+| ingress_cidr_blocks                 | List of Ingress CIDR blocks.                                                                                          | `list(string)` | n/a                        |   yes    |
+| instance_class                      | The instance type of the RDS instance.                                                                                | `string`       | n/a                        |   yes    |
+| password                            | Password for the master DB user.                                                                                      | `string`       | n/a                        |   yes    |
+| subnet_ids                          | A list of VPC subnet IDs.                                                                                             | `list(string)` | n/a                        |   yes    |
+| username                            | Username for the master DB user.                                                                                      | `string`       | n/a                        |   yes    |
+| vpc_id                              | VPC Id to associate with RDS MySQL.                                                                                   | `string`       | n/a                        |   yes    |
+| allow_major_version_upgrade         | Indicates that major version upgrades are allowed.                                                                    | `string`       | `true`                     |    no    |
+| apply_immediately                   | Specifies whether any database modifications are applied immediately, or during the next maintenance window.          | `string`       | `false`                    |    no    |
+| auto_minor_version_upgrade          | Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance window.. | `string`       | `true`                     |    no    |
+| backup_retention_period             | The days to retain backups for. Must be between 0 and 35.                                                             | `string`       | `"30"`                     |    no    |
+| backup_window                       | The daily time range (in UTC) during which automated backups are created if they are enabled.                         | `string`       | `""`                       |    no    |
+| ca_cert_identifier                  | The identifier of the CA certificate for the DB instance.                                                             | `string`       | `"rds-ca-2019"`            |    no    |
+| character_set                       | The database character set.                                                                                           | `string`       | `"utf8mb4"`                |    no    |
+| collation                           | The database collation.                                                                                               | `string`       | `"utf8mb4_bin"`            |    no    |
+| copy_tags_to_snapshot               | On delete, copy all Instance tags to the final snapshot.                                                              | `string`       | `true`                     |    no    |
+| deletion_protection                 | If the DB instance should have deletion protection enabled.                                                           | `string`       | `true`                     |    no    |
+| description                         | The description of the all resources.                                                                                 | `string`       | `"Managed by Terraform"`   |    no    |
+| enabled_cloudwatch_logs_exports     | List of log types to enable for exporting to CloudWatch logs.                                                         | `list(string)` | `[]`                       |    no    |
+| final_snapshot_identifier           | The name of your final DB snapshot when this DB instance is deleted.                                                  | `string`       | `"final-snapshot"`         |    no    |
+| iam_database_authentication_enabled | Specifies whether or mappings of IAM accounts to database accounts is enabled.                                        | `string`       | `true`                     |    no    |
+| iops                                | The amount of provisioned IOPS. Setting this implies a storage_type of io1.                                           | `string`       | `0`                        |    no    |
+| kms_key_id                          | The ARN for the KMS encryption key.                                                                                   | `string`       | `""`                       |    no    |
+| license_model                       | License model information for this DB instance.                                                                       | `string`       | `"general-public-license"` |    no    |
+| maintenance_window                  | The window to perform maintenance in.                                                                                 | `string`       | `""`                       |    no    |
+| major_engine_version                | Specifies the major version of the engine that this option group should be associated with.                           | `string`       | `""`                       |    no    |
+| monitoring_interval                 | The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.          | `string`       | `0`                        |    no    |
+| monitoring_role_arn                 | The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs.                     | `string`       | `""`                       |    no    |
+| multi_az                            | Specifies if the RDS instance is multi-AZ.                                                                            | `string`       | `true`                     |    no    |
+| name                                | The name of the database to create when the DB instance is created.                                                   | `string`       | `""`                       |    no    |
+| port                                | The port on which the DB accepts connections.                                                                         | `string`       | `3306`                     |    no    |
+| publicly_accessible                 | Bool to control if instance is publicly accessible.                                                                   | `string`       | `false`                    |    no    |
+| skip_final_snapshot                 | Determines whether a final DB snapshot is created before the DB instance is deleted.                                  | `string`       | `false`                    |    no    |
+| snapshot_identifier                 | The DB snapshot used when DB instance is created.                                                                     | `string`       | `""`                       |    no    |
+| storage_encrypted                   | Specifies whether the DB instance is encrypted.                                                                       | `string`       | `true`                     |    no    |
+| storage_type                        | One of standard (magnetic), gp2 (general purpose SSD), or io1 (provisioned IOPS SSD).                                 | `string`       | `"gp2"`                    |    no    |
+| tags                                | A mapping of tags to assign to all resources.                                                                         | `map(string)`  | `{}`                       |    no    |
+| time_zone                           | The database time zone.                                                                                               | `string`       | `"UTC"`                    |    no    |
+| tx_isolation                        | Sets the default transaction isolation level.                                                                         | `string`       | `"REPEATABLE-READ"`        |    no    |
 
 ## Outputs
 
