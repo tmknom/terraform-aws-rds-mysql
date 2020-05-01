@@ -1,6 +1,9 @@
 # terraform-aws-rds-mysql
 
-[![CircleCI](https://circleci.com/gh/tmknom/terraform-aws-rds-mysql.svg?style=svg)](https://circleci.com/gh/tmknom/terraform-aws-rds-mysql)
+[![Terraform Actions Status](https://github.com/tmknom/terraform-aws-rds-mysql/workflows/Terraform/badge.svg)](https://github.com/tmknom/terraform-aws-rds-mysql/actions?query=workflow%3ATerraform)
+[![Markdown Actions Status](https://github.com/tmknom/terraform-aws-rds-mysql/workflows/Markdown/badge.svg)](https://github.com/tmknom/terraform-aws-rds-mysql/actions?query=workflow%3AMarkdown)
+[![YAML Actions Status](https://github.com/tmknom/terraform-aws-rds-mysql/workflows/YAML/badge.svg)](https://github.com/tmknom/terraform-aws-rds-mysql/actions?query=workflow%3AYAML)
+[![JSON Actions Status](https://github.com/tmknom/terraform-aws-rds-mysql/workflows/JSON/badge.svg)](https://github.com/tmknom/terraform-aws-rds-mysql/actions?query=workflow%3AJSON)
 [![GitHub tag](https://img.shields.io/github/tag/tmknom/terraform-aws-rds-mysql.svg)](https://registry.terraform.io/modules/tmknom/rds-mysql/aws)
 [![License](https://img.shields.io/github/license/tmknom/terraform-aws-rds-mysql.svg)](https://opensource.org/licenses/Apache-2.0)
 
