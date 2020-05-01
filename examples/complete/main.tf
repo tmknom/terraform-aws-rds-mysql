@@ -7,9 +7,9 @@ module "rds_mysql" {
   username          = "root"
   password          = "YouShouldChangePasswordAfterApply!"
 
-  subnet_ids          = module.vpc.public_subnet_ids
-  vpc_id              = module.vpc.vpc_id
-  ingress_cidr_blocks = [module.vpc.vpc_cidr_block]
+  subnet_ids         = module.vpc.public_subnet_ids
+  vpc_id             = module.vpc.vpc_id
+  source_cidr_blocks = [module.vpc.vpc_cidr_block]
 
   maintenance_window                  = "mon:10:10-mon:10:40"
   backup_window                       = "09:10-09:40"
