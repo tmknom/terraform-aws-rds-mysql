@@ -28,7 +28,7 @@ This module provides recommended settings:
 
 ```hcl
 module "rds_mysql" {
-  source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/1.1.0"
+  source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/2.0.0"
   identifier        = "example"
   engine_version    = "5.7.23"
   instance_class    = "db.t2.small"
@@ -36,9 +36,9 @@ module "rds_mysql" {
   username          = "root"
   password          = "YouShouldChangePasswordAfterApply!"
 
-  subnet_ids          = ["${var.subnets}"]
-  vpc_id              = "${var.vpc_id}"
-  ingress_cidr_blocks = ["${var.ingress_cidr_blocks}"]
+  subnet_ids          = var.subnets
+  vpc_id              = var.vpc_id
+  ingress_cidr_blocks = var.ingress_cidr_blocks
 }
 ```
 
@@ -46,7 +46,7 @@ module "rds_mysql" {
 
 ```hcl
 module "rds_mysql" {
-  source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/1.1.0"
+  source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/2.0.0"
   identifier        = "example"
   engine_version    = "5.7.23"
   instance_class    = "db.t2.small"
@@ -54,9 +54,9 @@ module "rds_mysql" {
   username          = "root"
   password          = "YouShouldChangePasswordAfterApply!"
 
-  subnet_ids          = ["${var.subnets}"]
-  vpc_id              = "${var.vpc_id}"
-  ingress_cidr_blocks = ["${var.ingress_cidr_blocks}"]
+  subnet_ids          = var.subnets
+  vpc_id              = var.vpc_id
+  ingress_cidr_blocks = var.ingress_cidr_blocks
 
   maintenance_window                  = "mon:10:10-mon:10:40"
   backup_window                       = "09:10-09:40"
