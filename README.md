@@ -33,7 +33,7 @@ This module provides recommended settings:
 module "rds_mysql" {
   source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/2.0.0"
   identifier        = "example"
-  engine_version    = "5.7.23"
+  engine_version    = "5.7.28"
   instance_class    = "db.t2.small"
   allocated_storage = 20
   username          = "root"
@@ -51,7 +51,7 @@ module "rds_mysql" {
 module "rds_mysql" {
   source            = "git::https://github.com/tmknom/terraform-aws-rds-mysql.git?ref=tags/2.0.0"
   identifier        = "example"
-  engine_version    = "5.7.23"
+  engine_version    = "5.7.28"
   instance_class    = "db.t2.small"
   allocated_storage = 20
   username          = "root"

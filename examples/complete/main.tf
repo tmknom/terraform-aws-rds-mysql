@@ -1,7 +1,7 @@
 module "rds_mysql" {
   source            = "../../"
   identifier        = "example"
-  engine_version    = "5.7.23"
+  engine_version    = "5.7.28"
   instance_class    = "db.t2.small"
   allocated_storage = 20
   username          = "root"
