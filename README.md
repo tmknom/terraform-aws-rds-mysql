@@ -39,8 +39,8 @@ module "rds_mysql" {
   username          = "root"
   password          = "YouShouldChangePasswordAfterApply!"
 
-  subnet_ids          = var.subnets
-  vpc_id              = var.vpc_id
+  subnet_ids         = var.subnets
+  vpc_id             = var.vpc_id
   source_cidr_blocks = var.source_cidr_blocks
 }
 ```
@@ -57,8 +57,8 @@ module "rds_mysql" {
   username          = "root"
   password          = "YouShouldChangePasswordAfterApply!"
 
-  subnet_ids          = var.subnets
-  vpc_id              = var.vpc_id
+  subnet_ids         = var.subnets
+  vpc_id             = var.vpc_id
   source_cidr_blocks = var.source_cidr_blocks
 
   maintenance_window                  = "mon:10:10-mon:10:40"
